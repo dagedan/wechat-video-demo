@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.video {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  object-fit: contain;
+}
+.video:focus {
+  outline: none;
+}
