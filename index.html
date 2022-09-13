@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <div class="close">✖</div>
-      <video src="./video/1.mp4" autoplay muted class="video" controls></video>
+      <video src="./video/1.mp4" autoplay class="video"></video>
     </div>
     <script
       type="text/javascript"
@@ -26,6 +26,15 @@
         },
         false
       );
+      window.onload = function () {
+        document
+          .getElementsByClassName("close")[0]
+          .addEventListener("click", function (e) {
+            e.stopPropagation();
+            document.getElementsByTagName("video")[0].remove();
+            document.getElementsByClassName("close")[0].remove();
+          });
+      };
     </script>
   </body>
 </html>
