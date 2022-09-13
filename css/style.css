@@ -17,3 +17,13 @@
 .video:focus {
   outline: none;
 }
+.close {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  background: red;
+  text-align: center;
+  align-items: center;
+}
