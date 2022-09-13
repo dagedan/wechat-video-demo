@@ -12,5 +12,20 @@
       <div class="close">✖</div>
       <video src="./video/1.mp4" autoplay muted class="video" controls></video>
     </div>
+    <script
+      type="text/javascript"
+      src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"
+    ></script>
+    <script>
+      document.addEventListener(
+        "WeixinJSBridgeReady",
+        function () {
+          setTimeout(() => {
+            document.getElementsByTagName("video")[0].play();
+          }, 500);
+        },
+        false
+      );
+    </script>
   </body>
 </html>
