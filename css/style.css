@@ -26,4 +26,5 @@
   background: red;
   text-align: center;
   align-items: center;
+  z-index: 999;
 }
