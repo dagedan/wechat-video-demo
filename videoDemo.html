@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="close" id="close">✖</div>
+      <video src="./video/1.mp4" class="video" id="video"></video>
+      <input
+        type="text"
+        autofocus
+        id="input"
+        placeholder="在这里输入防抖测试"
+      />
+    </div>
+    <script
+      type="text/javascript"
+      src="http://res2.wx.qq.com/open/js/jweixin-1.0.0.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"
+    ></script>
+    <script>
+      document.getElementById("input").addEventListener("input", (e) => {
+        console.log(e.target.value);
+      });
+      document.addEventListener(
+        "WeixinJSBridgeReady",
+        function () {
+          setTimeout(() => {
+            document.getElementById("video").play();
+            console.log(1111);
+          }, 500);
+        },
+        false
+      );
+      document.addEventListener("touchstart", function () {
+        document.getElementById("video")?.play();
+      });
+      setTimeout(() => {
+        try {
+          WeixinJSBridge.invoke(
+            "getNetworkType",
+            {},
+            function (e) {
+              //在这里调用你的播放方法
+              console.log(2222);
+            },
+            false
+          );
+        } catch {}
+      }, 2000);
+
+      window.onload = function () {
+        document
+          .getElementById("close")
+          .addEventListener("click", function (e) {
+            e.stopPropagation();
+            document.getElementById("video").remove();
+            document.getElementById("close").remove();
+          });
+      };
+    </script>
+  </body>
+</html>
+
+w ca
